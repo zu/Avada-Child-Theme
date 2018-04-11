@@ -24,13 +24,10 @@ $data = array_merge( $data,
 
 array("custom_fields" => array(
     'price'  => get_post_meta( $event_id, '_ecp_custom_2', true ),
-    'price2'  => get_post_meta( $event_id, '_ecp_custom_3', true ),
-
     'Referent' => get_post_meta( $event_id, '_ecp_custom_3', true ),
     'Details_Anmeldung' => get_post_meta( $event_id, '_ecp_custom_4', true ),
     'Fotorechte' => get_post_meta( $event_id, '_ecp_custom_7', true ),
     'Preis' => get_post_meta( $event_id, '_ecp_custom_16', true ),
-
     )    ));
    
     return $data;
