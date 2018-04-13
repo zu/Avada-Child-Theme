@@ -19,16 +19,18 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 add_filter( 'tribe_rest_event_data', 'sp_add_event_customfields' );
   
 function sp_add_event_customfields($data) {
-$event_id = $data['id'];
-$data = array_merge( $data, 
+    $event_id = $data['id'];
+    $data = array_merge( $data, 
 
-array("custom_fields" => array(
-    'price'  => get_post_meta( $event_id, '_ecp_custom_2', true ),
-    'Referent' => get_post_meta( $event_id, '_ecp_custom_3', true ),
-    'Details_Anmeldung' => get_post_meta( $event_id, '_ecp_custom_4', true ),
-    'Fotorechte' => get_post_meta( $event_id, '_ecp_custom_7', true ),
-    'Preis' => get_post_meta( $event_id, '_ecp_custom_16', true ),
-    )    ));
-   
+        array("custom_fields" => array(
+            'price'  => get_post_meta( $event_id, '_ecp_custom_2', true ),
+            'Referent' => get_post_meta( $event_id, '_ecp_custom_3', true ),
+            'Details_Anmeldung' => get_post_meta( $event_id, '_ecp_custom_4', true ),
+            'Fotorechte' => get_post_meta( $event_id, '_ecp_custom_7', true ),
+            'Preis' => get_post_meta( $event_id, '_ecp_custom_16', true ),
+            'Termine'=> get_post_meta( $event_id, 'recurrence-description', true ),
+            )
+        )
+    );
     return $data;
 }
