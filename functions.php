@@ -28,7 +28,7 @@ function sp_add_event_customfields($data) {
             'Details_Anmeldung' => get_post_meta( $event_id, '_ecp_custom_4', true ),
             'Fotorechte' => get_post_meta( $event_id, '_ecp_custom_7', true ),
             'Preis' => get_post_meta( $event_id, '_ecp_custom_16', true ),
-            'Termine'=> get_post_meta( $event_id, 'recurrence-description', true ),
+            'Termine'=> get_post_meta( $event_id, '_ecp_custom_19', true ),
             )
         )
     );
